@@ -1,0 +1,95 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "builtin",
+        "height": 10,
+        "width": 5,
+        "padding": {
+            "top": 1,
+            "left": 3
+        }
+    },
+    "display": {
+        "separator": "  "
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "{#35}╭───────────────────────────────────╮"
+        },
+        {
+            "type": "kernel",
+            "key": "│ {#34}{#35}  kernel",
+            "keyColor": "35",
+            "format": "{#37}{release>22}{#35} │"
+        },
+          {
+            "type": "command",
+            "key": "│ {#34}{#35}  mem   ",
+            "keyColor": "35",
+            "text": "free -m | awk 'NR==2{printf \"%d MiB / %d MiB\", $3, $2}'",
+            "format": "{#37}{>22}{#35} │"
+        },
+        {
+            "type": "command",
+            "key": "│ {#34}{#35}  uptime",
+            "keyColor": "35",
+            "text": "uptime -p | cut -d ' ' -f 2-",
+            "format": "{#37}{>22}{#35} │"
+        },
+        {
+            "type": "command",
+            "key": "│ {#34}󰅐{#35}  os age",
+            "keyColor": "35",
+            "text": "birth=$(stat -c %W /); curr=$(date +%s); diff=$((curr - birth)); echo $((diff / 86400)) days",
+            "format": "{#37}{>22}{#35} │"
+        },
+        {
+            "type": "shell",
+            "key": "│ {#34}{#35}  shell ",
+            "keyColor": "35",
+            "format": "{#37}{pretty-name>22}{#35} │"
+        },
+        {
+            "type": "command",
+            "key": "│ {#34}󱓞{#35}  wm    ",
+            "keyColor": "35",
+            "text": "echo Niri",
+            "format": "{#37}{>22}{#35} │"
+        },
+        {
+            "type": "packages",
+            "key": "│ {#34}{#35}  pkgs  ",
+            "keyColor": "35",
+            "format": "{#37}{all>22}{#35} │"
+        },
+        {
+            "type": "command",
+            "key": "│ {#34}{#35}  user  ",
+            "keyColor": "35",
+            "format": "{#37}{>22}{#35} │"
+        },
+        {
+            "type": "command",
+            "key": "│ {#34}{#35}  host  ",
+            "keyColor": "35",
+            "text": " hostnamectl hostname",
+            "format": "{#37}{>22}{#35} │"
+        },
+        {
+            "type": "os",
+            "key": "│ {#34}󰻀{#35}  distro",
+            "keyColor": "35",
+            "format": "{#37}            Fedora KDE{#35} │"
+        },
+        {
+            "type": "custom",
+            "format": "{#35}│ {#34}{#35}  colors         {#30}● {#31}● {#32}● {#33}● {#34}● {#35}● {#36}● {#37}● {#35}│"
+        },
+        {
+            "type": "custom",
+            "format": "{#35}╰───────────────────────────────────╯"
+        }
+    ]
+}

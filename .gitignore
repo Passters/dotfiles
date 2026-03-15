@@ -1,0 +1,9 @@
+# Ignore everything in the dms folder
+niri/.config/niri/dms/*
+
+# BUT do NOT ignore the binds file inside it
+!niri/.config/niri/dms/binds.kdl
+
+# Also ignore Niri's auto-backups and saves
+niri/.config/niri/*.backup*
+niri/.config/niri/*.save
